@@ -122,8 +122,48 @@ while (totalEmpHrs <= MAX_HRS_IN_MONTH && totalWorkingDays < NUM_0F_WORKING_DAYS
 let totalempWage = totalEmpHrs * WAGE_PER_HOUR;
 console.log("Totaldays:- " + totalWorkingDays + "Total Hrs:- " + totalEmpHrs + "Emp Wage:- " + totalempWage)
 console.log("TotalHours:- "+ totalEmpHrs + "Emp Wage:- " + totalempWage);
+
+ //uc-6   
+ const PART_TIME = 1;  
+ const FULL_TIME = 2;
+ const PARTTIME_HOURS = 4;
+ const FULLTIME_HOURS = 8;
+ const WAGEPER_HOUR = 20;
+ function getWorkingHours(empCheck)
+ {
+     switch(empCheck)
+    {
+     case PARTTIME:
+         
+         return PARTTIME_HOURS;
         
-        
+     case FULL_TIME:
+     
+         return FULLTIME_HOURS;
+             
+     default:
+         return 0;    
+         
+    }
+} 
+function calDailyWage(empHrs) {
+    return empHrs * WAGEPER_HOUR;
+}
+const NUM_0FWORKING_DAYS = 20;
+const MAX_HRS_INMONTH = 160; 
+let TotalEmpHrs = 0;
+let TotalWorkingDays = 0;
+let empDailyWageArr = new Array();
+while (TotalEmpHrs <= MAX_HRS_INMONTH && TotalWorkingDays < NUM_0FWORKING_DAYS) {
+    TotalWorkingDays++;
+    let empCheck = Math.floor(Math.random() * 10) % 3;
+    let empHrs = getWorkingHours(empCheck);
+    TotalEmpHrs += empHrs;
+    empDailyWageArr.push(calDailyWage(empHrs));
+}
+let empWages = calDailyWage(TotalEmpHrs);
+console.log("Total Days:- " + TotalWorkingDays + "Total Hrs:- " + TotalEmpHrs + "Emp Wage:- " + empWages);
+
         
 
  
