@@ -144,5 +144,6 @@ let nonWorkingDayNums = empDailyHrsAndWageArry
                          .filter(dailyHrsAndWage => dailyHrsAndWage.dailyHours == 0)
                          .map(dailyHrsAndWage => dailyHrsAndWage.dayNum);
 console.log("UC 11D NonWorkingDayNums: " + nonWorkingDayNums);
+//uc-12
 
                                                                      
